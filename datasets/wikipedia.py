@@ -1,6 +1,6 @@
 import os
 import json
-import subprocess 
+from compat import *
 from datasets.util import Bunch, download_file
 
 URL = "https://dumps.wikimedia.org/hiwiki/20200801/hiwiki-20200801-pages-meta-current.xml.bz2"
@@ -16,7 +16,7 @@ def extract_data(fpath, output_dir=None):
 
     # Extract if directory is empty
     if len(os.listdir(output_dir)) == 0:
-        subprocess.run(
+        run_process(
             ["wikiextractor", fpath, "-o", output_dir, "--json"]
         )
     return output_dir
