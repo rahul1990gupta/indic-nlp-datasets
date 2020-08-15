@@ -1,6 +1,6 @@
 import os
 import json
-from compat import *
+from datasets.compat import *
 from datasets.util import Bunch, download_file
 
 URL = "https://dumps.wikimedia.org/hiwiki/20200801/hiwiki-20200801-pages-meta-current.xml.bz2"
