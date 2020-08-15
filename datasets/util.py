@@ -1,11 +1,9 @@
 import os
-from urllib.error import URLError, HTTPError
-from urllib.request import urlretrieve
 import tqdm
 import tarfile
 import zipfile
 import shutil
-
+from datasets.compat import *
 
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
