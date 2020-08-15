@@ -1,0 +1,7 @@
+Name, Size(compressed), Licence, Source url 
+Wikipedia, 235 MB, CC BY-SA, https://dumps.wikimedia.org/hiwiki/latest/ https://dumps.wikimedia.org/hiwiki/20200801/hiwiki-20200801-pages-meta-current.xml.bz2
+Oscar Common Crawl, 17 GB, Creative Commons, https://oscar-corpus.com/
+News crawl, 472 MB, Creative commons, http://data.statmt.org/news-crawl/hi/
+IITB, 2.45 GB, CC-NC-SA(debatable), http://www.cfilt.iitb.ac.in/iitb_parallel/
+Tweet corpus, 875 MB, Commercial, https://github.com/bedapudi6788/LOIT
+Hinglish Corpus, 206 MB, commercial, https://github.com/khyathiraghavi/multi_task_code_switched_language_modeling
