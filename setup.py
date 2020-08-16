@@ -9,7 +9,7 @@ if __name__ == "__main__":
         packages=find_packages(),
         entry_points={
             "console_scripts": [
-                "wikiextractor = vendor.WikiExtractor:main"
+                "wikiextractor = idatasets.vendor.WikiExtractor:main"
             ]
         },
     )
