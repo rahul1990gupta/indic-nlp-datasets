@@ -1,5 +1,5 @@
 import os
-from datasets.util import get_file, Bunch
+from .util import get_file, Bunch
 
 
 URL = "www.cfilt.iitb.ac.in/iitb_parallel/iitb_corpus_download/monolingual.hi.tgz"

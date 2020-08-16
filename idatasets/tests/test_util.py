@@ -1,5 +1,5 @@
 import os
-from datasets.util import download_file 
+from idatasets.datasets.util import download_file 
 
 
 def test_download_file():

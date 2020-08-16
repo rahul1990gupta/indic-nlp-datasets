@@ -1,4 +1,4 @@
-from datasets.util import download_file, Bunch
+from .util import download_file, Bunch
 import gzip
 import bz2
 import json

@@ -1,6 +1,6 @@
 import types
 import os
-from datasets.basic_loaders import get_data_gen
+from idatasets.datasets.basic_loaders import get_data_gen
 
 
 def test_data_gen(root):

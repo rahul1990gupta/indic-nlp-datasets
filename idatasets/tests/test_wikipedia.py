@@ -2,7 +2,7 @@ import os
 import json
 import types
 import tempfile
-from datasets.wikipedia import (
+from idatasets.datasets.wikipedia import (
     extract_data,
     get_wiki_generator,
 )

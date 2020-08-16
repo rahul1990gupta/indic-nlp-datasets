@@ -1,4 +1,4 @@
-from datasets.monolingual import load_monolingual_hi
+from idatasets.datasets.monolingual import load_monolingual_hi
 
 
 def test_monolingual_hi():
