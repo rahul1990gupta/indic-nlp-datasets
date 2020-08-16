@@ -37,7 +37,7 @@ jobs:
         flake8 datasets --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Generate coverage report
       run: |
-        pytest --cov=./ --cov-report=xml
+        pytest --cov=./datasets ./tests --cov-report=xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
