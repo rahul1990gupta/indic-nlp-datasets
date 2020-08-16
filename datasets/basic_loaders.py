@@ -41,7 +41,7 @@ def load_news_crawl():
 
 
 def get_tweet_gen(tweet_fpath):
-    with bz2.open(tweet_fpath) as fbz:
+    with bz2.BZ2File(tweet_fpath) as fbz:
         for line in fbz:
             yield json.loads(line)["tweet"]
 
