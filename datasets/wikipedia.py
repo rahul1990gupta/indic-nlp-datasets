@@ -29,7 +29,7 @@ def get_wiki_generator(extracted_dir):
     for (dirpath, dirnames, filenames) in os.walk(extracted_dir):
         for fname in filenames:
             fpath = os.path.join(dirpath, fname)
-            with open(fpath, "r") as fopen:
+            with open(fpath, "r", encoding="utf-8") as fopen:
                 for line in fopen.readlines():
                     yield json.loads(line)["text"]
 

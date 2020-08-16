@@ -17,7 +17,7 @@ def test_extract_data(root):
         
         fchunk_path = os.path.join(tempdir, "AA", "wiki_00")
         assert os.path.exists(fchunk_path)
-        with open(fchunk_path) as fh:
+        with open(fchunk_path, encoding='utf-8') as fh:
             text = json.loads(fh.readline())["text"]
             assert len(text) > 0 
 
