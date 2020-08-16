@@ -63,7 +63,7 @@ def get_hinglish_gen(fpaths):
                 yield line
 
 
-def load_hinglish_data(base_url=HINGLISH_URL):
+def load_hinglish(base_url=HINGLISH_URL):
     urls = [HINGLISH_URL + t for t in ["train.txt", "valid.txt", "test.txt"]]
 
     fpaths = [fpath for fpath in download_file(urls)]

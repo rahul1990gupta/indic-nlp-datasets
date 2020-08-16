@@ -14,17 +14,25 @@ pip install indic-nlp-datasets
 ## Datasets Available
 These are the datasets available in the library
 
-Name | Size 
- :-- | :---
-Wikipedia| 275 MB 
-Oscar Common Crawl| 17 GB
-News Crawl| 472 MB
-Monlingual | 2.45 GB
-Tweet Corpus | 875 MB 
-HInglish Corpus | 18 MB 
+Name | Size | submodule| language
+ :-- | :---| :-----|:----
+Wikipedia| 275 MB| `load_wikipedia`| hi
+Oscar Common Crawl| 17 GB| `load_occ`| hi
+News Crawl| 472 MB| `load_news_crawl`| hi
+Monlingual | 2.45 GB| `load_monolingual`| hi
+Tweet Corpus | 875 MB| `load_tweets`| hi
+Hinglish Corpus | 18 MB| `load_hinglish`| hi
+
 
 
 ## Getting started
 After installation, you can start by importing the dataset 
-
+```python
+from idatasets import load_hinglish
+hinglish = load_hinglish()
+print(hinglish.desc) # prints description of the data
+print(hingligh.created_at) # date/year when dataset was created
+for sent in hinglish.data:
+    # process sentence
+```
 
