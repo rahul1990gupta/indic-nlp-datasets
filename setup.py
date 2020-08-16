@@ -4,4 +4,12 @@
 if __name__ == "__main__":
     from setuptools import setup, find_packages
 
-    setup(name="indic_nlp_datasets", packages=find_packages())
+    setup(
+        name="indic_nlp_datasets", 
+        packages=find_packages(),
+        entry_points={
+            "console_scripts": [
+                "wikiextractor = vendor.WikiExtractor:main"
+            ]
+        },
+    )

@@ -1,3 +1,2 @@
 tqdm
-git+https://github.com/rogerioacp/wikiextractor.git@1682e9d214cc0dff37463ae650a0757c6f2c80d4 
 pytest
