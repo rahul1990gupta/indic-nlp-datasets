@@ -2881,7 +2881,7 @@ def process_dump(input_file, template_file, out_file, file_size, file_compress,
                 except ValueError:
                     logging.error('File read mode is invalid %s', mode)
                     return
-                return bz2.open(filename, mode, encoding=encoding)
+                return bz2.BZ2File(filename, mode, encoding=encoding)
             else:
                 return open(filename, mode, encoding=encoding)
         return hook
