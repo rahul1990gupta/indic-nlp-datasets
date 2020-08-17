@@ -10,6 +10,10 @@ You can use `pip` to install this library
 ```bash
 pip install indic-nlp-datasets
 ```
+To install the latest version of the datasets, use 
+```bash 
+pip install git+https://github.com/rahul1990gupta/indic-nlp-datasets.git@master
+```
 
 ## Datasets Available
 These are the datasets available in the library
