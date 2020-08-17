@@ -6,4 +6,5 @@ from .datasets.basic_loaders import (
 )
 from .datasets.wikipedia import load_wikipedia
 from .datasets.monolingual import load_monolingual_hi as load_monolingual
+from .datasets.devdas import load_devdas
 

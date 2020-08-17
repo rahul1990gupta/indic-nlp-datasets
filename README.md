@@ -22,17 +22,17 @@ News Crawl| 472 MB| `load_news_crawl`| hi
 Monlingual | 2.45 GB| `load_monolingual`| hi
 Tweet Corpus | 875 MB| `load_tweets`| hi
 Hinglish Corpus | 18 MB| `load_hinglish`| hi
+Devdas| 300 KB | `load_devdas`| hi
 
 
 
 ## Getting started
 After installation, you can start by importing the dataset 
 ```python
-from idatasets import load_hinglish
-hinglish = load_hinglish()
-print(hinglish.desc) # prints description of the data
-print(hingligh.created_at) # date/year when dataset was created
-for sent in hinglish.data:
-    # process sentence
+from idatasets import load_devdas
+devdas = load_devdas()
+print(devdas.desc) # prints description of the data
+print(devdas.created_at) # date/year when dataset was created
+for sent in devdas.data:
+    # process text chunks
 ```
-
