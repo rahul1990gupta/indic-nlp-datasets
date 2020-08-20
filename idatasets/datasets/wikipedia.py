@@ -2,11 +2,12 @@ import os
 import json
 import subprocess 
 from .util import Bunch, download_file
+from typing import Iterator, Dict
 
 URL = "https://dumps.wikimedia.org/hiwiki/20200801/hiwiki-20200801-pages-meta-current.xml.bz2"
 
 
-def extract_data(fpath, output_dir=None):
+def extract_data(fpath: str, output_dir: str = None) -> str:
     """ Extracts wikipedia docs from the xml dump.
     """
     if not output_dir:
@@ -22,7 +23,7 @@ def extract_data(fpath, output_dir=None):
     return output_dir
 
 
-def get_wiki_generator(extracted_dir):
+def get_wiki_generator(extracted_dir: str) -> Iterator:
     """
     One document at a time
     """
@@ -34,7 +35,7 @@ def get_wiki_generator(extracted_dir):
                     yield json.loads(line)["text"]
 
 
-def load_wikipedia():
+def load_wikipedia() -> Dict:
     fpath = download_file(URL)
     extracted_dir = extract_data(fpath)
     return Bunch(

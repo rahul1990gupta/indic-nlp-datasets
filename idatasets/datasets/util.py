@@ -11,7 +11,10 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-def download_file(origin, cache_subdir="datasets"):
+def download_file(
+    origin: str, 
+    cache_subdir: str = "datasets") -> str:
+
     fname = origin.split("/")[-1]
     datadir_base = os.path.expanduser(os.path.join("~", ".keras"))
     if not os.access(datadir_base, os.W_OK):
@@ -27,7 +30,7 @@ def download_file(origin, cache_subdir="datasets"):
     global progbar
     progbar = None
     
-    def dl_progress(count, block_size, total_size):
+    def dl_progress(count: int, block_size: int, total_size: int) -> None:
         global progbar
         if progbar is None:
             progbar = tqdm.tqdm(total=total_size)
@@ -51,7 +54,12 @@ def download_file(origin, cache_subdir="datasets"):
     return fpath
 
 
-def get_file(origin, untar=False, unzip=False, cache_subdir="datasets"):
+def get_file(
+    origin: str, 
+    untar: bool = False, 
+    unzip: bool = False, 
+    cache_subdir: str = "datasets") -> str:
+
     """Downloads a file from a URL if it not already in the cache."""
     # https://raw.githubusercontent.com/fchollet/keras/master/keras/utils/data_utils.py
     # Copyright Francois Chollet, Google, others (2015)
@@ -151,13 +159,13 @@ class Bunch(dict):
     def __init__(self, **kwargs):
         super().__init__(kwargs)
 
-    def __setattr__(self, key, value):
+    def __setattr__(self, key: str, value: str):
         self[key] = value
 
     def __dir__(self):
         return self.keys()
 
-    def __getattr__(self, key):
+    def __getattr__(self, key: str):
         try:
             return self[key]
         except KeyError:
