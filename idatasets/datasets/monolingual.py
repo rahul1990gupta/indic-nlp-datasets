@@ -1,11 +1,11 @@
 import os
 from .util import get_file, Bunch
-
+from typing import Iterator, Dict
 
 URL = "www.cfilt.iitb.ac.in/iitb_parallel/iitb_corpus_download/monolingual.hi.tgz"
 
 
-def get_monolingual_gen(extracted_dir):
+def get_monolingual_gen(extracted_dir: str) -> Iterator:
     """
     One document at a time
     """
@@ -18,7 +18,7 @@ def get_monolingual_gen(extracted_dir):
                     yield line
 
 
-def load_monolingual_hi(url=URL):
+def load_monolingual_hi(url: str = URL) -> Dict:
     untar_path = get_file(url, untar=True)
     return Bunch(
         data=get_monolingual_gen(untar_path),

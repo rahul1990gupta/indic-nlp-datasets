@@ -3,6 +3,8 @@ import gzip
 import bz2
 import json
 
+from typing import Iterator, Dict, List
+
 TWEETS_URL = "https://github.com/bedapudi6788/LOIT/releases/download/v1/lit-h.json.bz2"
 
 # Oscar Common Crawl dats
@@ -14,13 +16,13 @@ NEWS_URL = "http://data.statmt.org/news-crawl/hi/news.2019.hi.shuffled.deduped.g
 HINGLISH_URL = "https://raw.githubusercontent.com/khyathiraghavi/multi_task_code_switched_language_modeling/master/hinglishData/"
 
 
-def get_data_gen(gzip_fpath):
+def get_data_gen(gzip_fpath: str) -> Iterator:
     with gzip.open(gzip_fpath) as fgz:
         for line in fgz:
             yield line
 
 
-def load_occ():
+def load_occ() -> Iterator:
     fpath = download_file(OCC_URL)
     return Bunch(
         data=get_data_gen(fpath),
@@ -30,7 +32,7 @@ def load_occ():
     )
 
 
-def load_news_crawl():
+def load_news_crawl() -> Dict:
     fpath = download_file(NEWS_URL)
     return Bunch(
         data=get_data_gen(fpath),
@@ -40,13 +42,13 @@ def load_news_crawl():
     )
 
 
-def get_tweet_gen(tweet_fpath):
+def get_tweet_gen(tweet_fpath: str) -> Iterator:
     with bz2.open(tweet_fpath) as fbz:
         for line in fbz:
             yield json.loads(line)["tweet"]
 
 
-def load_tweets(url=TWEETS_URL):
+def load_tweets(url: str = TWEETS_URL) -> Dict:
     fpath = download_file(url)
     return Bunch(
         data=get_tweet_gen(fpath),
@@ -56,17 +58,17 @@ def load_tweets(url=TWEETS_URL):
     )
 
 
-def get_hinglish_gen(fpaths):
+def get_hinglish_gen(fpaths: List[str]) -> Iterator:
     for fpath in fpaths:
         with open(fpath) as fp:
             for line in fp:
                 yield line
 
 
-def load_hinglish(base_url=HINGLISH_URL):
+def load_hinglish(base_url: str = HINGLISH_URL) -> Dict:
     urls = [HINGLISH_URL + t for t in ["train.txt", "valid.txt", "test.txt"]]
 
-    fpaths = [fpath for fpath in download_file(urls)]
+    fpaths = [download_file(url) for url in urls]
 
     return Bunch(
         data=get_hinglish_gen(fpaths),
