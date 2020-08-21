@@ -8,6 +8,7 @@ if __name__ == "__main__":
         name="indic-nlp-datasets", 
         packages=find_packages(),
         include_package_data=True,
+        package_data={"idatasets": ["datasets/devdas.txt"]} ,
         install_requires=['tqdm'],
         classifiers=[
             'License :: OSI Approved :: MIT License',
