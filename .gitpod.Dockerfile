@@ -1,5 +1,6 @@
 FROM gitpod/workspace-full
 
+RUN pip install -r requirements.txt
 # Install custom tools, runtimes, etc.
 # For example "bastet", a command-line tetris clone:
 # RUN brew install bastet
