@@ -1,5 +1,6 @@
 FROM gitpod/workspace-full
 
+ADD requirements.txt .
 RUN pip3 install -r requirements.txt
 # Install custom tools, runtimes, etc.
 # For example "bastet", a command-line tetris clone:
