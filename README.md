@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/rahul1990gupta/indic-nlp-datasets)
+
 ## Overview
 This library provides Indian regional language datasets in an easy to use sklearn.dataset API format. You are free to use it in an application intended for commercial uses. 
 
